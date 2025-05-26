@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: HelloWorldProject
+  annotations:
+    github.com/project-slug: evidhya/HelloWorldProject
+spec:
+  type: other
+  lifecycle: unknown
