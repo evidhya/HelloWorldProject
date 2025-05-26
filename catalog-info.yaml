@@ -2,8 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: HelloWorldProject
+  description: A sample Hello World project
   annotations:
     github.com/project-slug: evidhya/HelloWorldProject
 spec:
-  type: other
-  lifecycle: unknown
+  type: service
+  lifecycle: production
+  owner: guest # 👈 required field
