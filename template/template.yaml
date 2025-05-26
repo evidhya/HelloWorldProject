@@ -1,0 +1,30 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: evidhya-template
+  title: Java Maven Service Template
+  description: Scaffolds a new Java Maven service with Docker and Kubernetes setup
+spec:
+  owner: devops-team
+  type: service
+  parameters:
+    - title: Service Info
+      required: [name]
+      properties:
+        name:
+          type: string
+          title: Name of the Service
+  steps:
+    - id: fetch
+      name: Fetch Template
+      action: fetch:template
+      input:
+        url: https://github.com/your-org/evidhya  # ⬅️ Change this
+        values:
+          name: ${{ parameters.name }}
+    - id: register
+      name: Register in Catalog
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['fetch'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
