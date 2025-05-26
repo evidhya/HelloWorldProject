@@ -4,6 +4,8 @@ metadata:
   name: HelloWorldProject
   description: A sample Hello World project
   annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: evidhya
     github.com/project-slug: evidhya/HelloWorldProject
 spec:
   type: service
